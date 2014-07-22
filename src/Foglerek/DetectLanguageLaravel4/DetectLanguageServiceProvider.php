@@ -5,7 +5,7 @@ use Illuminate\Foundation\AliasLoader;
 use Monolog\Logger;
 use Config;
 
-use DetectLanguageWrapper;
+use DetectLanguage\DetectLanguage;
 
 class DetectLanguageServiceProvider extends ServiceProvider {
 
@@ -44,7 +44,7 @@ class DetectLanguageServiceProvider extends ServiceProvider {
             $DetectLanguageWrapper = new DetectLanguageWrapper;
             
             $DetectLanguageWrapper->setApiKey(
-                Config::get('detectlanguage-laravel4::api_key')
+                Config::get('detectlanguage.api_key')
             );
 
             return $DetectLanguageWrapper;
