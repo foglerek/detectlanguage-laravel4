@@ -1,10 +1,11 @@
-<?php namespace Foglerek\DetectlanguageLaravel4;
+<?php namespace Foglerek\DetectLanguageLaravel4;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
 use Monolog\Logger;
 use Config;
-use DetectLanguage\DetectLanguage as DetectLanguageAPI;
+
+use DetectLanguageWrapper;
 
 class DetectLanguageServiceProvider extends ServiceProvider {
 
@@ -40,10 +41,13 @@ class DetectLanguageServiceProvider extends ServiceProvider {
         
         $this->app->singleton('detectlanguage', function()
         {
-            DetectLanguageAPI::setApiKey(
+            $DetectLanguageWrapper = new DetectLanguageWrapper;
+            
+            $DetectLanguageWrapper->setApiKey(
                 Config::get('detectlanguage-laravel4::api_key')
             );
-            return new DetectLanguageAPI;
+
+            return $DetectLanguageWrapper;
         });
     }
     
