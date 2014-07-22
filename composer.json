@@ -1,0 +1,23 @@
+{
+    "name": "foglerek/detectlanguage-laravel4",
+    "description": "Laravel 4 Wrapper for the official Detectlanguage.com PHP Client",
+    "keywords": ["detectlanguage","laravel","detect language"],
+    "homepage": "http://github.com/foglerek/detectlanguage-laravel4",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Wesolowski",
+            "email": "foglerek@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Foglerek\\DetectLanguageLaravel4": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
